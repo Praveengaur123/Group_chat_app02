@@ -3,4 +3,8 @@ const router=express.Router()
 
 const userController=require('../controller/user')
 
-router.get('/signup',userController.createUser)
+router.get('/',userController.getSignUpPage)
+
+router.post('/signup',userController.createUser)
+
+module.exports=router

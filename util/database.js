@@ -6,7 +6,7 @@ const dbUser=process.env.DB_USER
 const sequilize=new Sequelize(dbName,dbUser,dbPassword,{
     dialect:process.env.DIALECT,
     host:process.env.RDS_ENDPOINT,
-    loggin:false
+    logging:false
 })
 console.log('Connected to Database')
 module.exports=sequilize

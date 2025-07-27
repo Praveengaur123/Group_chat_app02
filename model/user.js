@@ -7,27 +7,39 @@ id:{
     type:DataTypes.INTEGER,
     autoIncrement:true,
     primaryKey:true,
-    notNull:true,
+    allowNull:false,
     unique:true
 },
 userName:{
         type:DataTypes.TEXT,
-        notNull:true
+        allowNull:false,
+        validate: {
+        notEmpty: true // Ensures it's not ""
+    }
     },
 userEmail:{
         type:DataTypes.STRING,
-        notNull:true,
-        unique:true
+        allowNull:false,
+        unique:true,
+        validate: {
+        notEmpty: true // Ensures it's not ""
+        }
     },
 userPhone:{
-    type:DataTypes.INTEGER,
-    notNull:true,
-    unique:true
+    type:DataTypes.STRING(10),
+    allowNull:false,
+    unique:true,
+    validate: {
+    notEmpty: true // Ensures it's not ""
+    }
 },
 userPassword:{
         type:DataTypes.STRING,
-        notNull:true
-    },
+        allowNull:false,
+        validate: {
+        notEmpty: true // Ensures it's not ""
+    }
+},
 })
 
 module.exports=userTable
