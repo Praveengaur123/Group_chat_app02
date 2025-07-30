@@ -1,6 +1,7 @@
+
 const baseUrl='http://localhost:3030'
 
-
+//  sign up form request with alert of dup entry
 const signUpForm=document.getElementById('signUpForm')
 signUpForm.addEventListener('submit',(event)=>{
     event.preventDefault()
@@ -12,13 +13,19 @@ signUpForm.addEventListener('submit',(event)=>{
         userName,userEmail,userPhone,userPassword
     }
     console.log("user Data from frontend",userData)
-    axios.post(`${baseUrl}/signup`,userData)
+    axios.post(`${baseUrl}/newUser`,userData)
     .then(response=>{
         console.log(response)
-        signUpForm.reset()
-        alert('Successfuly signed up')
+        alert(response.data.message)
     })
     .catch(err=>{
+        if(err.response.status==409){
+            alert(err.response.data.message)
+        }
+        else{
         console.log(err)
+        alert('Something went wrong')
+        }
     })
+    signUpForm.reset()
 })
