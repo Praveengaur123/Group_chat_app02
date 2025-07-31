@@ -4,7 +4,7 @@ const bcrypt=require('bcrypt')
 const jwt=require('jsonwebtoken')
 
 function generateToken(id){
-    return jwt.sign({userId:id},process.env.JWT_SECRET)
+    return jwt.sign({userId:id},process.env.JWT_SECRET,{expiresIn: '1800s'})
 }
 
 exports.userLogin=async(req,res)=>{
@@ -17,7 +17,7 @@ exports.userLogin=async(req,res)=>{
     const isCompared=await bcrypt.compare(userPassword,user.userPassword)
 
     if(isCompared){
-        return res.status(200).json({message:'Logged In Succesfully',redirectUrl:'/',token:generateToken(user.id)})
+        return res.status(200).json({message:'Logged In Succesfully',redirectUrl:'/chatApp',token:generateToken(user.id)})
     }
     else{
         return res.status(400).json({message:"Email or Password is Incorrect"})
