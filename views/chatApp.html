@@ -7,19 +7,30 @@
 </head>
 <body>
     <div class="container mt-5 d-flex justify-content-left align-items-left">
-        <button type="submit" id="logOutBtn"> Log Out</button>
+        <button type="submit" id="logOutBtn">Log Out</button>
     </div>
     <div class="container mt-5 d-flex justify-content-center align-items-center form-control">
     <h2>Chat App</h2>
-    <div id="chatSection">
-        <!--user will be displayed here and message will be seen-->
     </div>
+    <div id="userSection" class="container mt-5 d-flex justify-content-center align-items-center form-control">
+        <table id="onlineSection" class="table table-striped">
+        <!--online user will be displayed here-->
+        </table>
     </div>
-
+    <div id="chatSection" class="container mt-5 d-flex justify-content-center align-items-center form-control">
+        <table id="chatTable" class="table border">
+            <tbody id="chatBody">
+                <!--online user will be sending message-->
+            </tbody>
+            
+        </table>
+        
+        
+    </div>
     <div class="container mt-5 d-flex justify-content-center align-items-center">
-        <form id="message-form" method="post">
-        <input id="message" placeholder="Write Your Message Here">
-        <button type="submit" id="sendBtn">Send</button>
+        <form id="message-form" method="">
+        <input id="messageBox" placeholder="Write Your Message Here">
+        <button type="" id="sendChatBtn">Send</button>
         </form>
     </div>
 

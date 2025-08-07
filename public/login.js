@@ -10,14 +10,11 @@ logInCred.addEventListener('submit',(event)=>{
     axios.post(`${baseUrl}/userlogin`,userCred)
     .then(response=>{
         console.log(response)
-        
         localStorage.setItem('token',response.data.token)
         localStorage.setItem('userEmail',userEmail)
         if(response.data.token==null) alert('error:jwt is null');
         else {
-            console.log("hi before alert")
             alert(response.data.message)
-            
             window.location.href=response.data.redirectUrl;
         }
     })

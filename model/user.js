@@ -27,9 +27,12 @@ userPhone:{
 },
 userPassword:{
         type:DataTypes.STRING,
-        allowNull:false,
-       
+        allowNull:false, 
 },
+status:{
+    type:DataTypes.BOOLEAN,
+    defaultValue:false
+}
 })
 
 module.exports=userTable
