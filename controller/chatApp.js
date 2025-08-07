@@ -1,6 +1,8 @@
 const path=require('path')
 const user=require('../model/user')
 
+const chatTable=require('../model/chat')
+
 exports.getChatAppPage=(req,res)=>{
     res.sendFile(path.join(__dirname,'../views','chatApp.html'))
 }
@@ -31,33 +33,25 @@ exports.showUser=async(req,res)=>{
     } catch (error) {
         return res.json({error:error})
     }
-    
 }
 
 const fs=require('fs');
 
 exports.postChat=async(req,res)=>{
     const id=req.user.id
-    const message=req.body.message
+    const chat=req.body.message
 
     const userName= await user.findOne(
         {where:{id},
         attributes:['userName']
     })
-    const chat=`${userName.userName}:${message} ;   `
-    const fileName=`chat.txt`
-    fs.appendFile(fileName,chat,(err)=>{
-        if(err){
-            console.error("Error writing file",err)
-            return res.status(500).json({error:"Failed To Save Chat"})
-        }
-        return res.json({chat:chat})
-    })
+    await chatTable.create({userName:userName.userName,chat:chat,userId:id})
+    res.json({succes:true,})
+
 }
 
 exports.getChat=async(req,res)=>{
-    fs.readFile('chat.txt','utf-8',(err,data)=>{
-        if(err) console.log(err);
-        res.json({data:data})
-    })
+    const id=req.user.id
+    const chat =await chatTable.findAll()
+    res.json({chat:chat,redirectUrl:'/chatApp'})
 }

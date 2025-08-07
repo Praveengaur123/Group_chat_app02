@@ -63,7 +63,7 @@ sendChatBtn.addEventListener('click',(event)=>{
     axios.post(`${baseUrl}/sendChat`,{message},{headers:{'Authorization':token}})
     .then(response=>{
         console.log("response from backend",response)
-        showChat(response.data.chat.split(';'))
+        showChat(response.data.chat)
     })
     .catch(err=>{
         console.log("error from backend",err)
@@ -75,8 +75,8 @@ function chatHistory(){
     const token=localStorage.getItem('token')
     axios.get(`${baseUrl}/chatHistory`,{headers:{'Authorization':token}})
     .then(response=>{
-        const c=response.data.data
-        const chat=c.split(';')
+        const chat=response.data.chat
+        console.log(chat)
         chat.forEach(ch=>{
            showChat(ch)
         })
@@ -90,6 +90,6 @@ function showChat(c){
     const table=document.getElementById('chatBody')
     const row=document.createElement('tr')
     row.innerHTML=`
-    <td>${c}</td>`;
+    <td>${c.userName}:${c.chat}</td>`;
     table.appendChild(row)
 }

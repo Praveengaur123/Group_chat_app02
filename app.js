@@ -3,6 +3,8 @@ const express=require('express')
 const Sequelize=require('./util/database')
 const app=express()
 
+const {userTabel,chatTable}=require('./model/association')
+
 const path=require('path')
 const cors=require('cors')
 
