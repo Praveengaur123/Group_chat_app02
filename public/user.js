@@ -1,5 +1,4 @@
-
-const baseUrl='http://localhost:3030'
+const baseUrl='http://localhost:3030';
 
 //  sign up form request with alert of dup entry
 const signUpForm=document.getElementById('signUpForm')

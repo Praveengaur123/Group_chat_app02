@@ -1,4 +1,4 @@
-const baseUrl="http://localhost:3030"
+const baseUrl='http://localhost:3030';
 
 const logInCred=document.getElementById('login')
 logInCred.addEventListener('submit',(event)=>{

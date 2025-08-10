@@ -45,8 +45,8 @@ exports.postChat=async(req,res)=>{
         {where:{id},
         attributes:['userName']
     })
-    await chatTable.create({userName:userName.userName,chat:chat,userId:id})
-    res.json({succes:true,})
+    const postChat=await chatTable.create({userName:userName.userName,chat:chat,userId:id})
+    res.json({succes:true,chat:postChat})
 
 }
 
