@@ -1,5 +1,6 @@
 const path=require('path')
 const user=require('../model/user')
+const {Op}=require('sequelize')
 
 const chatTable=require('../model/chat')
 
@@ -51,7 +52,18 @@ exports.postChat=async(req,res)=>{
 }
 
 exports.getChat=async(req,res)=>{
-    const id=req.user.id
-    const chat =await chatTable.findAll()
+    try {
+         const id=req.user.id
+         const lastId=parseInt(req.query.lastId)
+
+         const chat =await chatTable.findAll({
+                where:{id:{[Op.gt]:lastId}},
+                order:[['id','ASC']],
+                limit:50
+    })
     res.json({chat:chat,redirectUrl:'/chatApp'})
+    } catch (error) {
+        console.log(error)
+        return res.json({error:error})
+    }
 }
