@@ -8,6 +8,7 @@ document.getElementById('logOutBtn').addEventListener('click',(event)=>{
     .then(response=>{
         localStorage.removeItem('token')
         localStorage.removeItem('userEmail')
+        localStorage.removeItem('chats')
         alert(response.data.message)
         window.location.href=response.data.redirectUrl
     })
@@ -79,7 +80,7 @@ function chatHistory(){
     axios.get(`${baseUrl}/chatHistory?lastId=${lastId}`,{headers:{'Authorization':token}})
     .then(response=>{
         const chat=response.data.chat
-        console.log(chat)
+        // console.log(chat)
         const table=document.getElementById('chatBody')
         table.innerHTML='' //clear previous chat
         chat.forEach(ch=>{
@@ -121,7 +122,28 @@ function showUserChat(u){
         const table=document.getElementById('userBody')
         const user=document.createElement('tr')
             const name=document.createElement('td')
-            name.innerText=userEmail===u.userEmail?`You Joined`:`${u.userName} Joined`;
+            name.innerText=userEmail===u.userEmail?`You (${u.userName}) Joined`:`${u.userName} Joined`;
             user.appendChild(name)
             table.appendChild(user)
 }
+
+// to get the make group page
+document.getElementById('makeGroup').addEventListener('click',(event)=>{
+    event.preventDefault()
+    
+    const token=localStorage.getItem('token')
+    console.log(token)
+    if(token==null){
+            window.location.href='/login'
+        }
+    window.location.href = `${baseUrl}/formGroup`;
+    axios.get("http://localhost:3030/formGroup")
+    .then(response=>{
+        console.log(response)
+        
+        window.location.href=response.data
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+})

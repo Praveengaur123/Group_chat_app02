@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f9;
+}
+
+/* Top bar */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.top-bar button {
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    background: #4a6cf7;
+    color: white;
+    font-weight: 500;
+}
+
+.top-bar button:last-child {
+    background: #6c757d;
+}
+
+/* Main layout */
+.main-layout {
+    display: flex;
+    height: calc(100vh - 70px);
+}
+
+/* Group panel */
+.group-panel {
+    width: 20%;
+    background: #fff;
+    border-right: 1px solid #ddd;
+    padding: 15px;
+}
+
+.group-panel h5 {
+    margin-bottom: 15px;
+}
+
+/* Chat panel */
+.chat-panel {
+    width: 80%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Chat box */
+.chat-box {
+    flex: 1;
+    overflow-y: auto;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Message input */
+.message-box {
+    margin-top: 10px;
+}
+
+.message-box form {
+    display: flex;
+    gap: 10px;
+}
+
+#messageBox {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+#sendChatBtn {
+    padding: 8px 15px;
+    border: none;
+    background: #4a6cf7;
+    color: white;
+    border-radius: 6px;
+}
+
+/* Tables cleanup */
+table {
+    margin-bottom: 0;
+}

@@ -2,7 +2,7 @@ const {Sequelize,DataTypes}=require('sequelize')
 
 const database=require('../util/database')
 
-const chatTable=database.define('chat',{
+const groupChatTable=database.define('groupChat',{
     id:{
         type:DataTypes.INTEGER,
         autoIncrement:true,
@@ -16,9 +16,20 @@ const chatTable=database.define('chat',{
     chat:{
         type:DataTypes.STRING,
         allowNull:false
+    },
+    fileUrl:{
+        type:DataTypes.STRING,
+        allowNull:true
+    },
+    userId:{
+        type:DataTypes.INTEGER,
+        allowNull:false
+    },
+    groupId:{
+        type:DataTypes.INTEGER,
+        allowNull:false
     }
-    
 })
 
 
-module.exports=chatTable
+module.exports=groupChatTable

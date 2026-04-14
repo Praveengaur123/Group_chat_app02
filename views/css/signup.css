@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #667eea, #764ba2);
+}
+
+/* Centering container */
+.main-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card styling */
+.form-card {
+    background: #fff;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Heading */
+.form-card h3 {
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Labels */
+label {
+    font-weight: 500;
+}
+
+/* Button */
+#signUp {
+    background: #667eea;
+    border: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+#signUp:hover {
+    background: #5a67d8;
+}
+
+/* Login text */
+h6 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Link */
+a {
+    text-decoration: none;
+    font-weight: 500;
+}

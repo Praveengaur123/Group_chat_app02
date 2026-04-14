@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Group</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/group.css">
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <div class="card-clean">
+
+            <form id="groupForm">
+
+                <h4 class="title">Create Group</h4>
+
+                <div class="mb-3">
+                    <label>Group Name</label>
+                    <input type="text" id="groupName" placeholder="Enter Your Group Name" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label>Select Members</label>
+                    <select id="membersName" multiple class="form-control select-box">
+                        <!-- option will be listed here -->
+                    </select>
+                </div>
+
+                <button type="submit" id="makeGroup" class="btn btn-primary w-100">
+                    Create Group
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
+<script src="group.js"></script>
+</html>

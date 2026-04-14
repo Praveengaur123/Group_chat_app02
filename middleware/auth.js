@@ -13,6 +13,7 @@ exports.authenticate=(req,res,next)=>{
         const user=User.findByPk(userData.userId)
         .then(user=>{
             req.user=user
+            // console.log("Authorised")
             next()
         })
     } catch (error) {

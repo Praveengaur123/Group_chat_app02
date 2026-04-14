@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Chat</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/groupChat.css">
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <button id="logOutBtn">Log Out</button>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+
+        <!-- Members -->
+        <div id="memberContainer" class="members-panel">
+            <h5 id="groupName"></h5>
+            <h6>Group Members:</h6>
+            <ul id="memberList"></ul>
+        </div>
+
+        <!-- Chat Section -->
+        <div id="chatContainer" class="chat-panel">
+
+            <h5 id="chatTitle"></h5>
+
+            <!-- Messages -->
+            <div id="chatBox" class="chat-box">
+                <!-- messages will appear here -->
+            </div>
+
+            <!-- Input -->
+            <div class="input-area">
+                <input type="text" id="chatInput" placeholder="Type Your Message">
+                <input type="file" id="fileInput">
+                <button id="sendBtn">Send</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
+<script src="groupChatPage.js"></script>
+</html>

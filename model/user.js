@@ -15,7 +15,7 @@ userName:{
         allowNull:false,
     },
 userEmail:{
-        type:DataTypes.STRING,
+        type:DataTypes.STRING(64),
         allowNull:false,
         unique:true,
         

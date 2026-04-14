@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f9;
+}
+
+/* Center layout */
+.main-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card */
+.card-clean {
+    background: #ffffff;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Title */
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Labels */
+label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* Input + Select */
+.form-control {
+    border-radius: 6px;
+}
+
+/* Select box height */
+.select-box {
+    height: 120px;
+}
+
+/* Button */
+#makeGroup {
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+/* Hover */
+#makeGroup:hover {
+    opacity: 0.9;
+}

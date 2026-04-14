@@ -36,18 +36,22 @@ exports.showUser=async(req,res)=>{
     }
 }
 
-const fs=require('fs');
+
 
 exports.postChat=async(req,res)=>{
     const id=req.user.id
     const chat=req.body.message
-
-    const userName= await user.findOne(
+    try {
+         const userName= await user.findOne(
         {where:{id},
         attributes:['userName']
     })
     const postChat=await chatTable.create({userName:userName.userName,chat:chat,userId:id})
     res.json({succes:true,chat:postChat})
+    } catch (error) {
+        console.log("error while posting invidual chat", error)
+    }
+   
 
 }
 

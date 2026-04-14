@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f9;
+}
+
+/* Top bar */
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+    background: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+#logOutBtn {
+    padding: 6px 14px;
+    border: none;
+    background: #6c757d;
+    color: white;
+    border-radius: 6px;
+}
+
+/* Layout */
+.main-layout {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+/* Members panel */
+.members-panel {
+    width: 25%;
+    background: #ffffff;
+    border-right: 1px solid #ddd;
+    padding: 15px;
+}
+
+/* Chat panel */
+.chat-panel {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+/* Chat box */
+.chat-box {
+    flex: 1;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+/* Input area */
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#chatInput {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+#fileInput {
+    padding: 6px;
+}
+
+#sendBtn {
+    padding: 8px 14px;
+    border: none;
+    background: #4a6cf7;
+    color: white;
+    border-radius: 6px;
+}
+
+/* List */
+ul {
+    padding-left: 20px;
+}

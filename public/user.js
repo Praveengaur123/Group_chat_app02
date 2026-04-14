@@ -11,10 +11,10 @@ signUpForm.addEventListener('submit',(event)=>{
     const userData={
         userName,userEmail,userPhone,userPassword
     }
-    console.log("user Data from frontend",userData)
+    // console.log("user Data from frontend",userData)
     axios.post(`${baseUrl}/newUser`,userData)
     .then(response=>{
-        console.log(response)
+        // console.log(response)
         alert(response.data.message)
     })
     .catch(err=>{

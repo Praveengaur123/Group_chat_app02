@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+     
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/signup.css">
+
 </head>
 <body>
     <div class="container py-5 d-flex justify-content-center align-items-center" style="width: fit-content;">
-    <form id="signUpForm" class="form-control bg-light" >
+    <form id="signUpForm"  >
         <h3>Create Your Account</h3><br>
-        <div class="mb-3">
+        <div >
             <label>Name</label>
             <input type="text" placeholder="Enter Your Name" class="form-control" id="userName" required>
         </div>
@@ -26,7 +30,7 @@
             <input type="password" class="form-control" name="" id="userPassword" placeholder="Enter Your Password" required>
         </div>
         <div class="py-2">
-        <button type='submit' id="signUp" class="form-control btn-secondary">Sign Up</button>
+        <button type='submit' id="signUp" >Sign Up</button>
         <h6>Existing User <a href="/login" id="loginPage">Click Here For Login</a></h6>
         </div>
     </form>
