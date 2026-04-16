@@ -8,6 +8,8 @@ const {userTable,chatTable,groupTable,groupMemberTable,groupChatTable}=require('
 const path=require('path')
 const cors=require('cors')
 
+require('./cron/archivedChat')
+
 // router
 const userRouter=require('./route/user')
 const loginRouter=require('./route/login')
